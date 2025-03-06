@@ -12,6 +12,10 @@ app.get('/number',(req, res) => {
     res.send("welcome to page");
 }); 
 
+app.get('/service',(req,res)=>{
+    res.send("welcoome to our services");
+})
+
 const port = 5000;
 
 app.listen(port, ()=>{
