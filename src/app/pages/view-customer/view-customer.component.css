@@ -1,0 +1,62 @@
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background: #4CAF50;
+    color: white;
+  }
+  .navbar .logo span {
+    font-weight: bold;
+  }
+  .navbar .links a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Table */
+  .table-container {
+    padding: 1rem;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  .table-container h2 {
+    margin-bottom: 1rem;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    text-align: left;
+  }
+  
+  /* Buttons */
+  .btn {
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  .btn.delete {
+    background: #e94e4e;
+    color: white;
+  }
+  .btn.delete:hover {
+    background: #c33;
+  }
+  
+  /* Pagination */
+  .pagination {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .pagination button {
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+  }

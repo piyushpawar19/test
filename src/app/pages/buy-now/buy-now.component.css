@@ -1,0 +1,10 @@
+.order-form { max-width: 400px; margin: 1rem auto; padding: 1rem; border: 1px solid #ccc; }
+label { display: block; margin-top: 0.5rem; }
+input { width: 100%; padding: 0.5rem; margin-top: 0.25rem; }
+div { color: red; font-size: 0.8rem; }
+button { margin-top: 1rem; padding: 0.5rem 1rem; width: 100%; }
+
+.navbar { display: flex; align-items: center; justify-content: space-between; padding: 1rem; background: #4CAF50; color: white; }
+.navbar .logo span { font-weight: bold; }
+.navbar input { width: 40%; padding: 0.5rem; }
+.navbar .links a { margin-left: 1rem; color: white; text-decoration: none; }

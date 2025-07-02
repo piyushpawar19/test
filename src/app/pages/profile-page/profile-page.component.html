@@ -1,0 +1,68 @@
+<nav class="navbar">
+  <div class="logo"><a href="home.component.html" style="text-decoration:none;color: #fff;"> Grocery<span>Mgmt</span></a></div>
+    <div class="links">
+      <a routerLink="/">Logout</a>
+    </div>
+  </nav>
+  
+  <div class="profile-container">
+    <aside class="sidebar">
+      <button class="sidebar-btn active">Basic Details</button>
+      <button class="sidebar-btn" routerLink="/user-dashboard/profile/change-password">Change Password</button>
+    </aside>
+  
+    <section class="content">
+      <h2>Basic Details</h2>
+      <form (ngSubmit)="save()">
+        <label>Customer ID</label>
+        <input type="text" [value]="user.id" disabled />
+  
+        <label>Name</label>
+        <input
+          type="text"
+          [(ngModel)]="user.name"
+          name="name"
+          [disabled]="!editMode"
+        />
+  
+        <label>Email</label>
+        <input
+          type="email"
+          [(ngModel)]="user.email"
+          name="email"
+          [disabled]="!editMode"
+        />
+  
+        <label>Address</label>
+        <input
+          type="text"
+          [(ngModel)]="user.address"
+          name="address"
+          [disabled]="!editMode"
+        />
+  
+        <label>Phone Number</label>
+        <input
+          type="tel"
+          [(ngModel)]="user.phone"
+          name="phone"
+          [disabled]="!editMode"
+        />
+  
+        <div class="buttons">
+          <button type="button" class="btn edit" (click)="toggleEdit()">
+            {{ editMode ? 'Cancel' : 'Update' }}
+          </button>
+          <button
+            type="submit"
+            class="btn save"
+            *ngIf="editMode"
+          >
+            Save
+          </button>
+        </div>
+      </form>
+    </section>
+  </div>
+  
+  

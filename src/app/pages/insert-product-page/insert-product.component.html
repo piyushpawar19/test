@@ -1,0 +1,33 @@
+<nav class="navbar">
+  <div class="logo"><a href="home.component.html" style="text-decoration:none;color: #fff;"> Grocery<span>Mgmt</span></a></div>
+
+    <input type="text" placeholder="Search groceries..." />
+    <div class="links">
+      <a routerLink="/register">Register</a>
+      <a routerLink="/login-selection">Login</a>
+    </div>
+  </nav>
+  
+  
+  <div class="form-container">
+    <h2>Add New Product</h2>
+    <form (ngSubmit)="addProduct()">
+      <label>Product Name</label>
+      <input type="text" [(ngModel)]="product.name" name="name" required />
+  
+      <label>Description</label>
+      <textarea [(ngModel)]="product.description" name="description"></textarea>
+  
+      <label>Quantity</label>
+      <input type="number" [(ngModel)]="product.quantity" name="quantity" />
+  
+      <label>Image URL</label>
+      <input type="text" [(ngModel)]="product.imageUrl" name="imageUrl" />
+  
+      <label>Price</label>
+      <input type="number" [(ngModel)]="product.price" name="price" />
+  
+      <button type="submit">Add</button>
+    </form>
+  </div>
+  

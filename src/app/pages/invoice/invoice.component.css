@@ -1,0 +1,7 @@
+.invoice { max-width: 600px; margin:1rem auto; padding:1rem;border:1px solid #ccc; }
+table { width:100%; border-collapse: collapse; margin:1rem 0; }
+th, td { border:1px solid #ddd; padding:0.5rem; text-align:left; }
+.navbar { display: flex; align-items: center; justify-content: space-between; padding: 1rem; background: #4CAF50; color: white; }
+.navbar .logo span { font-weight: bold; }
+.navbar input { width: 40%; padding: 0.5rem; }
+.navbar .links a { margin-left: 1rem; color: white; text-decoration: none; }

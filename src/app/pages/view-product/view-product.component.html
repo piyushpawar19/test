@@ -1,0 +1,46 @@
+<nav class="navbar">
+  <div class="logo"><a href="home.component.html" style="text-decoration:none;color: #fff;"> Grocery<span>Mgmt</span></a></div>
+
+    <input type="text" placeholder="Search groceries..." />
+    <div class="links">
+      <!-- <a routerLink="/register">Register</a> -->
+      <a routerLink="/">Logout</a>
+    </div>
+  </nav>
+  
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Product_ID</th>
+          <th>Product_Name</th>
+          <th>Description</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of displayed; let i = index">
+          <td>{{ (page - 1) * perPage + i + 1 }}</td>
+          <td>{{ product.id }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.quantity }}</td>
+          <td>\${{ product.price }}</td>
+          <td>
+            <button class="btn update" (click)="update(product.id)">Update</button>
+            <button class="btn delete" (click)="delete(product.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Pagination Controls -->
+    <div class="pagination">
+      <button (click)="prev()" [disabled]="page === 1">Prev</button>
+      <span>Page {{ page }}</span>
+      <button (click)="next()" [disabled]="page * perPage >= allProducts.length">Next</button>
+    </div>
+  </div>

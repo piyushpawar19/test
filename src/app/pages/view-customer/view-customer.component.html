@@ -1,0 +1,44 @@
+<nav class="navbar">
+  <div class="logo"><a href="home.component.html" style="text-decoration:none;color: #fff;"> Grocery<span>Mgmt</span></a></div>
+
+    <div class="links">
+      <a routerLink="/">Logout</a>
+    </div>
+  </nav>
+  
+  <div class="table-container">
+    <h2>All Customers</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Customer_ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Address</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of displayed; let i = index">
+          <td>{{ (page - 1) * perPage + i + 1 }}</td>
+          <td>{{ c.id }}</td>
+          <td>{{ c.name }}</td>
+          <td>{{ c.email }}</td>
+          <td>{{ c.phone }}</td>
+          <td>{{ c.address }}</td>
+          <td>
+            <button class="btn delete" (click)="delete(c.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div class="pagination">
+      <button (click)="prev()" [disabled]="page === 1">Prev</button>
+      <span>Page {{ page }}</span>
+      <button (click)="next()" [disabled]="page * perPage >= allCustomers.length">Next</button>
+    </div>
+  </div>
+  

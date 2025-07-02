@@ -1,0 +1,32 @@
+<nav class="navbar">
+
+  <div class="logo"><a href="home.component.html" style="text-decoration:none;color: #fff;"> Grocery<span>Mart</span></a>
+  </div>
+  <!-- <input type="text" placeholder="Search groceries..." /> -->
+  
+  <!-- <div class="search-container">
+      <input type="text" placeholder="Search groceries..." />
+      <button type="submit">
+        <i class="fa fa-search" style="color: white;"></i>
+      </button>
+    </div> -->
+
+  <div class="links">
+    <!-- <a routerLink="/register">Register</a> -->
+    <a routerLink="/login-selection">Login</a>
+  </div>
+</nav>
+<div class="form-container">
+    <h2>Register</h2>
+    <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+      <input formControlName="name" type="text" placeholder="Name" required />
+      <input formControlName="email" type="email" placeholder="Email" required />
+      <input formControlName="phone" type="tel" placeholder="Phone Number" required />
+      <input formControlName="address" type="text" placeholder="Address" required />
+      <input formControlName="password" type="password" placeholder="Password" required />
+      <input formControlName="confirmPassword" type="password" placeholder="Confirm Password" required />
+      <button type="submit" [disabled]="regForm.invalid">Sign Up</button>
+    </form>
+    <p>Already registered? <a routerLink="/admin-login">Go to Login</a></p>
+  </div>
+  

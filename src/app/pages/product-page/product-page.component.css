@@ -1,0 +1,14 @@
+.product-detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+}
+.product-detail img { max-width: 300px; width: 100%; }
+.info { flex: 1; }
+.price { font-weight: bold; margin: 1rem 0; }
+button { margin-right: 0.5rem; padding: 0.5rem 1rem; }
+.navbar { display: flex; align-items: center; justify-content: space-between; padding: 1rem; background: #4CAF50; color: white; }
+.navbar .logo span { font-weight: bold; }
+.navbar input { width: 40%; padding: 0.5rem; }
+.navbar .links a { margin-left: 1rem; color: white; text-decoration: none; }

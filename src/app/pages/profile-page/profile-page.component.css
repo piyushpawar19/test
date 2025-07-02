@@ -1,0 +1,110 @@
+/* Reset some basics */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #4CAF50;
+  color: white;
+  padding: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+.navbar .logo span { font-weight: bold; }
+.navbar .links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Layout */
+.profile-container {
+  display: flex;
+  height: calc(100vh - 64px); /* subtract navbar height */
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 200px;
+  background: #f4f4f4;
+  padding: 1rem;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar-btn {
+  background: none;
+  border: none;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-bottom: 0.5rem;
+}
+.sidebar-btn:hover,
+.sidebar-btn.active {
+  background: #e0e0e0;
+}
+
+/* Content */
+.content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+.content h2 {
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* Form */
+form {
+  max-width: 500px;
+}
+label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 500;
+  color: #555;
+}
+input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+input:disabled {
+  background: #f9f9f9;
+}
+
+/* Buttons */
+.buttons {
+  margin-top: 1.5rem;
+}
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+  margin-right: 0.5rem;
+}
+.btn.edit {
+  background: #4a90e2;
+  color: white;
+}
+.btn.save {
+  background: #357ABD;
+  color: white;
+}
+.btn.edit:hover {
+  background: #357ABD;
+}
+.btn.save:hover {
+  background: #2a5a9e;
+}

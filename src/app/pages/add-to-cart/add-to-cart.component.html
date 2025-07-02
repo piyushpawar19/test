@@ -1,0 +1,33 @@
+<!-- <app-navbar [showSearch]="false" [showBack]="true" (backClick)="back()"></app-navbar>
+ -->
+
+<nav class="navbar">
+  <div class="logo">
+    <a href="home.component.html" style="text-decoration: none; color: #fff">
+      Grocery<span>Mgmt</span></a
+    >
+  </div>
+
+  <input type="text" placeholder="Search groceries..." />
+  <div class="links">
+    <a routerLink="/">Logout</a>
+  </div>
+</nav>
+
+<div class="cart-container">
+  <div class="cart-item" *ngFor="let c of items">
+    <span>{{ c.title }}</span>
+    <div class="controls">
+      <button (click)="decrement(c)">-</button>
+      <span>{{ c.quantity }}</span>
+      <button (click)="increment(c)">+</button>
+      <button (click)="remove(c)">Remove</button>
+    </div>
+    <span>$ {{ (c.quantity * c.price).toFixed(2) }}</span>
+  </div>
+  <div class="summary">
+    <p>Total Items: {{ totalItems }}</p>
+    <p>Total: $ {{ totalAmount.toFixed(2) }}</p>
+    <button (click)="buyNow()">Buy Now</button>
+  </div>
+</div>

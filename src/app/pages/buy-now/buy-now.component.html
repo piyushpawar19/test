@@ -1,0 +1,46 @@
+
+
+
+<!-- <app-navbar [showSearch]="false" [showBack]="true" (backClick)="back()"></app-navbar> -->
+<nav class="navbar">
+  <div class="logo"><a href="home.component.html" style="text-decoration:none;color: #fff;"> Grocery<span>Mgmt</span></a></div>
+  <input type="text" placeholder="Search groceries..." />
+  <div class="links">
+    <a routerLink="/register">Register</a>
+    <a routerLink="/login-selection">Login</a>
+  </div>
+</nav>
+
+<div class="order-form">
+  <h2>Order Details</h2>
+  <p>Total Items: {{ totalItems }}</p>
+  <p>Total Price: ${{ totalAmount.toFixed(2) }}</p>
+
+  <form [formGroup]="form" (ngSubmit)="placeOrder()">
+    <label>Card Holder Name</label>
+    <input formControlName="cardName" />
+    <div *ngIf="form.controls['cardName'].invalid && form.controls['cardName'].touched">
+      Name must contain letters only.
+    </div>
+
+    <label>Card Number</label>
+    <input formControlName="cardNumber" maxlength="16" />
+    <div *ngIf="form.controls['cardNumber'].invalid && form.controls['cardNumber'].touched">
+      Card number must be 16 digits.
+    </div>
+
+    <label>CVV</label>
+    <input formControlName="cvv" maxlength="3" type="password" />
+    <div *ngIf="form.controls['cvv'].invalid && form.controls['cvv'].touched">
+      CVV must be 3 digits.
+    </div>
+
+    <label>Expiry (MM/YY)</label>
+    <input formControlName="expiry" maxlength="5" placeholder="MM/YY" />
+    <div *ngIf="form.controls['expiry'].errors?.['expired'] && form.controls['expiry'].touched">
+      Card expired.
+    </div>
+
+    <button type="submit" [disabled]="form.invalid">Place Order</button>
+  </form>
+</div>
